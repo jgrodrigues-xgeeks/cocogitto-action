@@ -27,7 +27,7 @@ inputs:
     required: false
     default: 'cog@demo.org'
   install-dir:
-    description: Directory to install the tool
+    description: Directory to install cocogitto
     required: false
     default: '$HOME/.local/bin'
 outputs:

@@ -89,6 +89,7 @@ Here are all the inputs available through `with`:
 
 | Input                   | Description                                                                | Default    |
 | -------------------     | -------------------------------------------------------------------------- | -------    |
+| `install-dir`           | Directory to install `cocogitto`                                           |  `$HOME/.local/bin`|
 | `check`                 | Check conventional commit compliance with `cog check`                      |   `true`   |
 | `check-latest-tag-only` | Check conventional commit compliance with `cog check --from-latest-tag`    |   `false`  |
 | `release`               | Perform a release using `cog bump --auto`                                  |   `false`  |
