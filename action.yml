@@ -26,6 +26,10 @@ inputs:
     description: 'Git user.email configuration'
     required: false
     default: 'cog@demo.org'
+  install-dir:
+    description: Directory to install the tool
+    required: false
+    default: '$HOME/.local/bin'
 outputs:
   version:
     description: "Version released"
@@ -37,6 +41,8 @@ runs:
       shell: bash
 
     - id: install
+      env:
+        INSTALL_DIR: ${{ inputs.install-dir }}
       run: ${{ github.action_path }}/install.sh
       shell: bash
 
@@ -45,8 +51,10 @@ runs:
 
     - id: add-to-path
       shell: sh
+      env:
+        INSTALL_DIR: ${{ inputs.install-dir }}
       run: |
-        echo "$HOME/.local/bin" >> $GITHUB_PATH
+        echo "$INSTALL_DIR" >> $GITHUB_PATH
 
     - id: cog
       run: |
